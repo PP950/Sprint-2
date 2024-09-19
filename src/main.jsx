@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './App.jsx'
 import Error from './routes/Error.jsx'
 import Home from './routes/Home.jsx'
+import Login from './routes/Login.jsx'
 
 //criando a função pai
 const router = createBrowserRouter([{
@@ -13,7 +14,8 @@ const router = createBrowserRouter([{
 
   //Elemento Filho
   children:[
-    {path:'/',element:<Home/>},
+    {path:'/', element:<Home/>},
+    {patj:'/login', element:<Login/>}
     
   ]
 }

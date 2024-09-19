@@ -1,0 +1,100 @@
+import {useRef, useState, useEffect } from "react"
+import { useNavigate, Link } from "react-router-dom"
+
+
+const Login=()=>{
+    
+    //Hook- useRef guarda o elemento ou referencia
+    const usuario = useRef();
+    const senha = useRef();
+
+    //Hook- useState manipula o estado da variavel
+    const [usuarios, setUsuarios] = useState([]);
+    
+    //Hook- useNavigate redireciona para um componente
+    const navigate = useNavigate();
+
+    //função de validação
+    function validade(){
+        for(let i=0; i< usuarios.length; i++){
+            if(
+                usuarios[i].usuario == usuario.current.value &&
+                usuarios[i].senha == senha.current.value
+            ){
+                return True;
+            }
+        }
+    }
+
+    //Função handleSubmit
+    const handleSubmit=(e)=>{
+        //Previne que a pagina faça qualquer alteração
+        e.preventDefault();
+
+        if(validade()){
+            let token=
+            Math.random().toString(16).substring(2)+
+            Math.random().toString(16).substring(2)
+            sessionStorage.setItem("usuario",usuario.current.value);
+            sessionStorage.setItem("senha", token)
+            navigate("/Home")
+            alert("Login feito com Sucesso!")
+
+        }else{
+            alert("Usuario/senha inválidos")
+        }
+    }
+
+    //Hook- useEffect Pagina executa o Login
+    useEffect(()=>{
+        //vai na api e tras os dados a partir do url
+        fetch("http://localhost:9595/usuarios/")
+        //Promessa
+        .then((res)=>{
+            return res.json();
+        })
+        //Receber as alterações
+        .then((res)=>{
+            setUsuarios(res)
+        })
+        //Retorna Array vazio
+    },[])
+
+    return(
+        <>
+        <section className="container">
+            <div className="container-login">
+                <div className="login">
+                    <form className="login-form" onSubmit={handleSubmit}>
+                         <span className="titulo-login">Faça seu Login</span>
+
+                         <div className="w-input">
+                            <input
+                            type="password"
+                            className="input-form"
+                            id="senha"
+                            ref={senha}
+                            />
+                         </div>
+
+                         <div className="login-btn">
+                            <button type="submit" className="login-form-btn">Login</button>
+                         </div>
+
+                         <ul className="utilidades">
+                            <li>
+                                <span className="text1">Esqueçeu sua senha ?</span>
+                            </li>
+                            <li>
+                                <span className="text1">Não possui conta ?</span>
+                                <Link to="usuario">Criar</Link>
+                            </li>
+                         </ul>
+                    </form>
+                </div>
+            </div>
+        </section>
+        </>
+    )
+}
+export default Login
