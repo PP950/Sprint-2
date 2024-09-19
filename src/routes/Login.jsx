@@ -1,7 +1,7 @@
 import {useRef, useState, useEffect } from "react"
 import { useNavigate, Link } from "react-router-dom";
-
-
+import { LoginStyle } from "../css/Loginstyle";
+import Imagem from '../assets/Login.jpg'
 const Login=()=>{
     
     //Hook- useRef guarda o elemento ou referencia
@@ -61,7 +61,7 @@ const Login=()=>{
     },[])
 
     return(
-        <>
+        <LoginStyle>
         <section className="container">
             <div className="container-login">
                 <div className="login">
@@ -102,9 +102,10 @@ const Login=()=>{
                          </ul>
                     </form>
                 </div>
+                <img src={Imagem} alt="logo imagem"/>
             </div>
         </section>
-        </>
+        </LoginStyle>
     )
 }
 export default Login
