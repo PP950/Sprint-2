@@ -89,7 +89,7 @@ img{
     border-radius:100%;
 }
 img:hover{
-    box-shadow:10px 10px 10px blue;
+    box-shadow:10px 10px 10px #471515;
     transition:.5s;
 }
 
