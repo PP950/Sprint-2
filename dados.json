@@ -1,9 +1,14 @@
 {
-    "usuarios": [
-        {
-            "id": "2943",
-            "usuario": "Fiap",
-            "senha": "12345"
-          }
-    ]
+  "usuarios": [
+    {
+      "id": "2943",
+      "usuario": "Fiap",
+      "senha": "12345"
+    },
+    {
+      "id": "839f",
+      "usuario": "paulo",
+      "senha": "9595"
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 import {useRef, useState, useEffect } from "react"
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom";
 
 
 const Login=()=>{
@@ -21,7 +21,7 @@ const Login=()=>{
                 usuarios[i].usuario == usuario.current.value &&
                 usuarios[i].senha == senha.current.value
             ){
-                return True;
+                return true;
             }
         }
     }
@@ -37,8 +37,8 @@ const Login=()=>{
             Math.random().toString(16).substring(2)
             sessionStorage.setItem("usuario",usuario.current.value);
             sessionStorage.setItem("senha", token)
-            navigate("/Home")
-            alert("Login feito com Sucesso!")
+            navigate("/")
+            
 
         }else{
             alert("Usuario/senha inválidos")
@@ -67,6 +67,16 @@ const Login=()=>{
                 <div className="login">
                     <form className="login-form" onSubmit={handleSubmit}>
                          <span className="titulo-login">Faça seu Login</span>
+                         
+
+                         <div className="w-input">
+                            <input
+                            type="text"
+                            className="input-form"
+                            id="usuario"
+                            ref={usuario}
+                            />
+                         </div>
 
                          <div className="w-input">
                             <input
@@ -87,7 +97,7 @@ const Login=()=>{
                             </li>
                             <li>
                                 <span className="text1">Não possui conta ?</span>
-                                <Link to="usuario">Criar</Link>
+                                <Link to="/usuario">Criar</Link>
                             </li>
                          </ul>
                     </form>
