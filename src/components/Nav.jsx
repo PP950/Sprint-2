@@ -9,10 +9,10 @@ const Nav=()=>{
       <a href="/" className="logo">
         <img src={logo} alt="Logo" width="150px" />
       </a>
-      <ul>
+    
         <li><Link to="/">Home</Link></li>
         <li><Link to="/login">Login</Link></li>
-      </ul>
+      
     </nav>
         </NavStyle>
     )
