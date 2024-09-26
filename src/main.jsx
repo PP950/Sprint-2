@@ -6,6 +6,9 @@ import Error from './routes/Error.jsx'
 import Home from './routes/Home.jsx'
 import Login from './routes/Login.jsx'
 import Usuario from './routes/Usuario.jsx'
+import Clientes from './routes/Clientes.jsx'
+import Menu from './routes/Menu.jsx'
+import CadastrarCliente from './routes/CadastrarClientes.jsx'
 
 
 //criando a função pai
@@ -18,7 +21,10 @@ const router = createBrowserRouter([{
   children:[
     {path:'/', element:<Home/>},
     {path:'/login', element:<Login/>},
-    {path:'/usuario', element:<Usuario/>}    
+    {path:'/usuario', element:<Usuario/>},
+    {path:'/clientes', element:<Clientes/>},
+    {path:'/menu', element:<Menu/>},
+    {path:'/cadastrarclientes', element:<CadastrarCliente/>}
   ]
 }
 ])

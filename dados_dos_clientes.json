@@ -1,0 +1,22 @@
+{
+  "clientes": [
+    {
+      "id": "8aa0",
+      "nome": "Paulo",
+      "email": "pp08@gmail.com",
+      "telefone": "11 98765-0223"
+    },
+    {
+      "id": "05a5",
+      "nome": "joao",
+      "email": "joao954@gmail.com",
+      "telefone": "11 98343 1003"
+    },
+    {
+      "id": "6b07",
+      "nome": "andre",
+      "email": "asdsa@gmail.com",
+      "telefone": "11 78654 1003"
+    }
+  ]
+}
