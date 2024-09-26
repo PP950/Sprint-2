@@ -1,30 +1,13 @@
 import styled from 'styled-components'
 
 export const HomeStyle = styled.section`
-:root {
-    --font: 'Lato', sans-serif;
-    --color1: #00001a;
-    --color3: #009b7e;
-    --color4: #bbdec6;
-    --color5: #f7f8fc;
-}
-
-body {
-    background: var(--color1);
-    color: var(--color4);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
-    margin: 0;
-    min-height: 100vh;
-}
 
 main {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
+    background-color:#ccc;
 }
 
 .formula1, .problema, .solucao, .comparacao {
@@ -90,10 +73,6 @@ button {
     text-align: center;
 }
 
-button:hover {
-    background-color: var(--color4);
-    color: var(--color1);
-}
 
 /* Responsividade */
 @media screen and (max-width: 768px) {
@@ -108,5 +87,5 @@ button:hover {
     .info img.icon {
         margin: 5px 0;
     }
-}
+        
 `

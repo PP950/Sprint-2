@@ -1,67 +1,89 @@
 import styled from "styled-components";
 
 export const NavStyle = styled.section`
-:root {
-    --font: 'Lato', sans-serif;
-    --color6: #121212;
-    --color3: #009b7e;
-    --color5: #f7f8fc;
-}
 
-/* Estilo do header e da navegação */
-header {
-    background-color: var(--color6);
-    padding: 20px 0;
-    width: 100%;
-    box-shadow: 0 1rem 6px rgba(46, 46, 46, 0.432);
-    border-radius: 1rem;
+.active {
+    background-color:#1d4ed8;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    width: 100%;
-    max-width: 1200px; 
-    margin: 0 auto;
+    align-items:  center;
+    background-color: #0f172a ;
+    position: sticky;
+    top: 0;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    color: white;
+nav .title{
+    font-size: 1.5rem;
+    margin: 1rem;
+    font-weight: bold;
     text-decoration: none;
-    padding: 8px 16px;
-    transition: background-color 0.3s;
+    color: white;
+}
+nav ul {
+    display: flex;
+}
+nav ul li {
+    list-style: none;
+}
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
 }
 
-nav ul li a:hover {
-    background-color: #555;
-    border-radius: 4px;
-    color: var(--color3);
+nav ul li a:not(.active):hover{
+    background-color: #172554;
 }
 
-/* Responsividade */
-@media screen and (max-width: 768px) {
+nav .menu {
+    display: none;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
+}
+
+nav .menu span {
+    height: 0.4rem;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0.2rem;
+}
+
+@media (max-width: 480px) {
+    nav .menu {
+        display: flex;
+    }
     nav {
         flex-direction: column;
-        align-items: center;
+        align-items: start;
+    }
+    nav ul {
+        display:  none;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 0.25rem;
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
+    nav ul.open {
+        display: flex;
+    }
+    
+    nav ul li{
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li a {
+        margin: 0.2rem 0.5rem;
     }
 }
-
-
 `
